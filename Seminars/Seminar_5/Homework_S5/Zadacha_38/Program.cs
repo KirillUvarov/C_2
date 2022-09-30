@@ -1,2 +1,2 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿// Программа задаёт массив вещественных чисел и ищет разницу между минимальным и максимальным значениями.
+
