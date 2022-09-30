@@ -16,13 +16,13 @@ void PrintArray(int[] col)
 {
     int count = col.Length;
     int position = 0;
-    //Console.Write("A[");
+    Console.Write("A[");
     while (position < count)
     {
         Console.Write($"{col[position]} ");
         position++;
     }
-    //Console.Write("]");
+    Console.Write("]");
 }
 
 FillArray(array);
