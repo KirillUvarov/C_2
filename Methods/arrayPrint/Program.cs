@@ -1,5 +1,7 @@
 ﻿//Метод вывода массива в терминал
 
+int[] array = new int [5];
+
 void PrintArray(int[] col)
 {
     int count = col.Length;
@@ -10,3 +12,4 @@ void PrintArray(int[] col)
         position++;
     }
 }
+PrintArray(array);
