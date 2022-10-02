@@ -12,15 +12,14 @@ void FillArray(int[] collection) // void - метод, который ничег
     int index = 0;
     while (index < length)
     {
-        collection[index] = new Random().Next(0,100);
+        collection[index] = new Random().Next(0, 123);
         index++;
     }
 }
 
-
 void PrintArray(int[] col)
 {
-    int count = col.Length;
+    int count = col.Length; // может нужно "col.Length - 1"
     int position = 0;
     while (position < count)
     {
@@ -31,3 +30,18 @@ void PrintArray(int[] col)
 
 FillArray(array); 
 PrintArray(array);
+
+int count = 0;
+int count2 = 0;
+
+for(int i = 0; i < array.Length; i++)
+{
+    if (array[i] > 10 && array[i] < 99)
+    {
+        count++;
+    }
+    else count2++;
+}
+Console.WriteLine();
+Console.WriteLine($"Количество элементов >10 и <99 ->{count}");
+Console.WriteLine($"Количество остальных ->{count2}");
