@@ -1,25 +1,48 @@
-﻿// 3 -> 11
+﻿// Задача 40.
+// Программа, которая принимает три числа и проверяет, может ли существовать треугольник с такими сторонами
 
-// 2 -> 10
-Console.Write("Введите число для перевода в двоичную систему - ");
+Console.WriteLine("Введите три числа:");
 int a = Convert.ToInt32(Console.ReadLine());
-int count=0;
-int z=a;
-int b = 0;
-while (a>0)
+int b = Convert.ToInt32(Console.ReadLine());
+int c = Convert.ToInt32(Console.ReadLine());
+if (a+b>c && b+c>a && a+c>b)
 {
-    b=a%2;
-    a=a/2;
-    // Console.Write($"{b} ");
-    count++;
+   Console.Write("Треугольник возможен"); 
 }
-int [] arr= new int[count];
-int j=1;
-while (z>0)
+else 
 {
-    arr[count-j]=z%2;
-    z=z/2;
-    j++;
+    Console.Write("Треугольник НЕвозможен");
 }
- Console.WriteLine(" ");
-Print(arr);
+
+// int count=0;
+// int z=a;
+// int b = 0;
+
+// void Print(int[]mas)
+// {
+//     int i=0;
+//     while (i<mas.Length)
+//     {
+//         Console.Write($"{mas[i]} ");
+//         i++;
+//     }
+// }
+
+// while (a>0)
+// {
+//     b=a%2;
+//     a=a/2;
+//     // Console.Write($"{b} ");
+//     count++;
+// }
+// int [] arr= new int[count];
+// int j=1;
+// while (z>0)
+// {
+//     arr[count-j]=z%2;
+//     z=z/2;
+//     j++;
+// }
+//  Console.WriteLine(" ");
+
+// Print(arr);
