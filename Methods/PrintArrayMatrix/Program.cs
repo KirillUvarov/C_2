@@ -1,6 +1,8 @@
 ﻿int[,] matrix = new int[3, 4];
 
-void PrintArrayMatrix(int[,] matr) // Метод вывода на консоль матрицы двумерного массива
+// Метод вывода на консоль матрицы двумерного массива
+
+void PrintArrayMatrix(int[,] matr) 
 {
 for (int i = 0; i < matrix.GetLength(0); i++)
 {
