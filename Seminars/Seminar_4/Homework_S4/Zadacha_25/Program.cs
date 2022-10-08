@@ -10,5 +10,5 @@ while (count < value)
 {
     result = result * number;
     count++;
-    }
+}
 Console.WriteLine(result);
