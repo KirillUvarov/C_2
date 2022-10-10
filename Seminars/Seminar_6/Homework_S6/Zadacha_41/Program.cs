@@ -35,3 +35,4 @@ void PrintArray(int[] col)
 PrintArray(array);
 Console.WriteLine();
 Console.WriteLine($"Вы ввели {m} чисел, среди которых {count} положительных");
+
