@@ -2,16 +2,16 @@
 
 // Метод вывода на консоль матрицы двумерного массива
 
-void PrintArrayMatrix(int[,] matr) 
+void PrintArrayMatrix(int[,] matr)
 {
-for (int i = 0; i < matrix.GetLength(0); i++)
-{
-    for(int j = 0; j < matrix.GetLength(1); j++)
+    for (int i = 0; i < matr.GetLength(0); i++)
     {
-        Console.Write($"{matrix[i, j]} ");
+        for (int j = 0; j < matr.GetLength(1); j++)
+        {
+            Console.Write($"{matr[i, j]} ");
+        }
+        Console.WriteLine();
     }
-    Console.WriteLine();
-}
 }
 
 PrintArrayMatrix(matrix);

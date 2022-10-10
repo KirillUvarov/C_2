@@ -11,5 +11,6 @@ void PrintArray(int[] col)
         Console.Write($"{col[position]} ");
         position++;
     }
+    Console.WriteLine("");
 }
 PrintArray(array);
