@@ -1,4 +1,4 @@
-// Задача 56.
+﻿// Задача 56.
 // Ищем строку с наименьшей суммой элементов.
 
 Console.WriteLine("Введите размер квадратной матрицы");
@@ -34,32 +34,45 @@ void PrintArrayMatrix(int[,] matr)
     }
 }
 
-FillArray(array);
-PrintArrayMatrix(array);
-
-void SumString2DArray(int[,] arr)
+void SearchMaxSumString(int[,] arr)
 {
     for (int z = 0; z < arr.GetLength(0); z++)
     {
-        int StringSum = 0;
-        for (int i = 0; i < arr.GetLength(1); i++)
+        int StringSumMin = z;
+        int StringSum1 = 0;
+        int StringSum2 = 0;
+        for (int q = z + 1; q < arr.GetLength(0); q++) // [z, q]
         {
-            //int StringSumMin = i;
-            
-            StringSum = StringSum + arr[z,i];
-            
+            for (int i = 0; i < arr.GetLength(1); i++)
+            {
+                StringSum1 = StringSum1 + arr[z, i];
+                StringSum2 = StringSum2 + arr[q, i];
+                if (StringSum1 < StringSum2)
+                {
+                    StringSumMin = z;
+                    //Console.WriteLine($"Строка с {arr[z, StringSumMin]} = {StringSum}");
+                }
+            }
 
-            // for (int j = i + 1; j < arr.GetLength(1); j++)
-            // {
-            //     StringSum = StringSum + arr[z,j];
-            // }
 
-            // int help = arr[z, i];
-            // arr[z, i] = arr[z, max];
-            // arr[z, max] = help;
+            Console.WriteLine($"Сумма: {StringSum}");
         }
-        Console.WriteLine($"{StringSum}");
-
+        Console.WriteLine($"Строка: {StringSumMin}");
     }
 }
 
+FillArray(array);
+PrintArrayMatrix(array);
+Console.WriteLine("________");
+SearchMaxSumString(array);
+
+
+// for (int i = 0; i < arr.GetLength(1); i++)
+//             {
+//                 StringSum = StringSum + arr[z, i];
+//                 if (arr[z, i] < arr[StringSumMin, i])
+//                 {
+//                     StringSumMin = z;
+//                     //Console.WriteLine($"Строка с {arr[z, StringSumMin]} = {StringSum}");
+//                 }
+//             }
