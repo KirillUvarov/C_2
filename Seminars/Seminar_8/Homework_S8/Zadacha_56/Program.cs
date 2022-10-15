@@ -1,24 +1,23 @@
 ﻿// Задача 56.
 // Ищем строку с наименьшей суммой элементов.
 
-Console.WriteLine("Введите размер квадратной матрицы");
+Console.Write("Введите количество строк в квадратной матрице: ");
 int a = Convert.ToInt32(Console.ReadLine());
-int b = a;
-Console.WriteLine("________");
-
+//Console.Write("Введите количество столбцов в матрице: ");
+int b = a; //Convert.ToInt32(Console.ReadLine());
 int[,] array = new int[a, b];
 
-void FillArray(int[,] collection2D)
+
+void FillArray2D(int[,] collection2D)
 {
     Random random = new Random();
-    for (int i = 0; i < a; i++)
+    for (int i = 0; i < collection2D.GetLength(0); i++)
     {
-        for (int j = 0; j < b; j++)
+        for (int j = 0; j < collection2D.GetLength(1); j++)
         {
-            collection2D[i, j] = random.Next(0, 10);
-            //Console.Write($" {collection2D[i, j]} ");
+            collection2D[i, j] = random.Next(0, 100);
         }
-        //Console.WriteLine();
+
     }
 }
 
@@ -34,45 +33,39 @@ void PrintArrayMatrix(int[,] matr)
     }
 }
 
-void SearchMaxSumString(int[,] arr)
+void MinStringSum(int[,] arr)
 {
-    for (int z = 0; z < arr.GetLength(0); z++)
+    int MinStringSum = int.MaxValue;
+    int indexMinString = 0;
+    for (int i = 0; i < a; i++)
     {
-        int StringSumMin = z;
-        int StringSum1 = 0;
-        int StringSum2 = 0;
-        for (int q = z + 1; q < arr.GetLength(0); q++) // [z, q]
+        int rowSum = 0;
+        for (int j = 0; j < b; j++)
+            rowSum += arr[i, j];
+
+        if (rowSum < MinStringSum)
         {
-            for (int i = 0; i < arr.GetLength(1); i++)
-            {
-                StringSum1 = StringSum1 + arr[z, i];
-                StringSum2 = StringSum2 + arr[q, i];
-                if (StringSum1 < StringSum2)
-                {
-                    StringSumMin = z;
-                    //Console.WriteLine($"Строка с {arr[z, StringSumMin]} = {StringSum}");
-                }
-            }
+            MinStringSum = rowSum;
+            indexMinString = i;
 
-
-            Console.WriteLine($"Сумма: {StringSum}");
         }
-        Console.WriteLine($"Строка: {StringSumMin}");
+
+    }
+
+    Console.WriteLine("Строка с минимальной суммой элементов");
+    for (int j = 0; j < b; j++)
+    {
+        Console.Write(array[indexMinString, j] + " ");
     }
 }
 
-FillArray(array);
+FillArray2D(array);
 PrintArrayMatrix(array);
-Console.WriteLine("________");
-SearchMaxSumString(array);
+MinStringSum(array);
 
 
-// for (int i = 0; i < arr.GetLength(1); i++)
-//             {
-//                 StringSum = StringSum + arr[z, i];
-//                 if (arr[z, i] < arr[StringSumMin, i])
-//                 {
-//                     StringSumMin = z;
-//                     //Console.WriteLine($"Строка с {arr[z, StringSumMin]} = {StringSum}");
-//                 }
-//             }
+
+
+
+
+
