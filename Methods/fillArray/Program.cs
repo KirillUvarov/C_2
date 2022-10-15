@@ -17,6 +17,7 @@
 
 
 
+
 // int[,] array = new int [13,13];
 
 // void FillArray(int[,] collection) // void - метод, который ничего не возвращает
