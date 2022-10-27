@@ -1,7 +1,5 @@
 ﻿// Написать программу, которая из имеющегося массива строк формирует массив из строк, длина которых <=3 символа.
 
-
-
 // string[] arr_1 = new string[4] {"hello", "2", "world", ":-)"};
 string[] arr_1 = new string[4] {"1234", "1567", "-2", "computer science"};
 // string[] arr_1 = new string[3] {"Russia", "Denmark", "Kazan"};
